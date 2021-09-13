@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using GamedevNetwork.Mvc.Data;
 using GamedevNetwork.Mvc.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GamedevNetwork.Mvc.Controllers 
 {
+    [Authorize]
     public class PostsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -63,8 +65,7 @@ namespace GamedevNetwork.Mvc.Controllers
             if (ModelState.IsValid)
             {
                 var userId = _userManager.GetUserId(User);
-                var profile = await _context.GamedevProfile.Where(x =>
-                                    x.UserId == userId).FirstOrDefaultAsync();
+                var profile = await _context.GamedevProfile.Where(x => x.UserId == userId).FirstOrDefaultAsync();
 
                 post.GamedevProfile = profile;
                 post.DataCriacao = DateTime.Now;

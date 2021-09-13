@@ -5,6 +5,12 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:DefaultConnection",
       "secretStore": "AzureAppSettings"
+    },
+    "storage1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/stgamedevnetwork",
+      "type": "storage.azure",
+      "connectionId": "StorageAccount",
+      "secretStore": "AzureAppSettings"
     }
   }
 }
