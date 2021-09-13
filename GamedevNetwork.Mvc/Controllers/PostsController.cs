@@ -7,22 +7,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GamedevNetwork.Mvc.Data;
 using GamedevNetwork.Mvc.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace GamedevNetwork.Mvc.Controllers 
 {
     public class PostsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public PostsController(ApplicationDbContext context)
+        public PostsController(ApplicationDbContext context,
+                               UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Posts
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Post.ToListAsync());
+            return View(await _context.Post.Include(p => p.GamedevProfile).ToListAsync());
         }
 
         // GET: Posts/Details/5
@@ -58,6 +62,13 @@ namespace GamedevNetwork.Mvc.Controllers
         {
             if (ModelState.IsValid)
             {
+                var userId = _userManager.GetUserId(User);
+                var profile = await _context.GamedevProfile.Where(x =>
+                                    x.UserId == userId).FirstOrDefaultAsync();
+
+                post.GamedevProfile = profile;
+                post.DataCriacao = DateTime.Now;
+
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
