@@ -27,7 +27,7 @@ Disciplina: Projeto de Bloco | TP1, TP2, TP3, TP4, TP5
 <br>
 
 ## Requisitos de Usuário
-* R01 - Registre os desenvolvedores
+* R01 - Registre os desenvolvedores<br>
 O sistema deve pedir o nome, idade, endereço eletrônico e senha para que o usuário seja registrado.
 <br>
 
