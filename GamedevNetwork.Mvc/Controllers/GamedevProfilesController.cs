@@ -87,7 +87,7 @@ namespace GamedevNetwork.Mvc.Controllers
                                                   file.ContentType));
                 }
                 var httpClient = clientFactory.CreateClient("ClientHttp");
-                var response = await httpClient.PostAsync("api/image", content);
+                var response = await httpClient.PostAsync("api/Image", content);
 
                 response.EnsureSuccessStatusCode();
 
