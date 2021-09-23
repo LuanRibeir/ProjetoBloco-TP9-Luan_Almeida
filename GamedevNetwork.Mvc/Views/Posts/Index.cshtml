@@ -18,7 +18,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.DataCriacao)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.GamedevProfile.Nome)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +33,7 @@
                 @Html.DisplayFor(modelItem => item.DataCriacao)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.GamedevProfile.Nome)
             </td>
         </tr>
 }
