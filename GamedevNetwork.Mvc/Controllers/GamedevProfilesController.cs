@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using GamedevNetwork.Mvc.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
@@ -12,21 +10,22 @@ using System.IO;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Authorization;
 using GamedevNetwork.Domain.Models;
+using GamedevNetwork.Domain.Interfaces;
 
 namespace GamedevNetwork.Mvc.Controllers
 {
     [Authorize]
     public class GamedevProfilesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IGamedevRepository _repository;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
 
-        public GamedevProfilesController(ApplicationDbContext context,
+        public GamedevProfilesController(IGamedevRepository repository,
                                          UserManager<IdentityUser> userManager,
                                          SignInManager<IdentityUser> signInManager)
         {
-            _context = context;
+            _repository = repository;
             _userManager = userManager;
             _signInManager = signInManager;
         }
@@ -36,7 +35,7 @@ namespace GamedevNetwork.Mvc.Controllers
         {
             var userId = _userManager.GetUserId(User);
 
-            var profile = await _context.GamedevProfile.Where(x => x.UserId == userId).ToListAsync();
+            var profile = await _repository.GetProfileAsync(userId);
 
             return View(profile);
         }
@@ -49,8 +48,7 @@ namespace GamedevNetwork.Mvc.Controllers
                 return NotFound();
             }
 
-            var gamedevProfile = await _context.GamedevProfile
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var gamedevProfile = await _repository.GetByIdAsync(id.Value); 
             if (gamedevProfile == null)
             {
                 return NotFound();
@@ -97,8 +95,7 @@ namespace GamedevNetwork.Mvc.Controllers
                 gamedevProfile.UserId = userId;
                 gamedevProfile.ImagemUri = imagemUri;
 
-                _context.Add(gamedevProfile);
-                await _context.SaveChangesAsync();
+                await _repository.InsertAsync(gamedevProfile);
                 return RedirectToAction(nameof(Index));
             }
             return View(gamedevProfile);
@@ -126,7 +123,7 @@ namespace GamedevNetwork.Mvc.Controllers
                 return NotFound();
             }
 
-            var gamedevProfile = await _context.GamedevProfile.FindAsync(id);
+            var gamedevProfile = await _repository.GetByIdAsync(id.Value);
             if (gamedevProfile == null)
             {
                 return NotFound();
@@ -150,8 +147,7 @@ namespace GamedevNetwork.Mvc.Controllers
             {
                 try
                 {
-                    _context.Update(gamedevProfile);
-                    await _context.SaveChangesAsync();
+                    await _repository.UpdateAsync(gamedevProfile);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -177,8 +173,8 @@ namespace GamedevNetwork.Mvc.Controllers
                 return NotFound();
             }
 
-            var gamedevProfile = await _context.GamedevProfile
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var gamedevProfile = await _repository.GetByIdAsync(id.Value);
+
             if (gamedevProfile == null)
             {
                 return NotFound();
@@ -192,15 +188,16 @@ namespace GamedevNetwork.Mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var gamedevProfile = await _context.GamedevProfile.FindAsync(id);
-            _context.GamedevProfile.Remove(gamedevProfile);
-            await _context.SaveChangesAsync();
+            var gamedevProfile = await _repository.GetByIdAsync(id);
+            await _repository.DeletetAsync(gamedevProfile);
+                
             return RedirectToAction(nameof(Index));
         }
 
         private bool GamedevProfileExists(int id)
         {
-            return _context.GamedevProfile.Any(e => e.Id == id);
+            var gamedevProfile = _repository.GetByIdAsync(id).Result;
+            return (gamedevProfile != null);
         }
     }
 }

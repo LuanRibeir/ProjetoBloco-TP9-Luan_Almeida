@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GamedevNetwork.Data\GamedevNetwork.Data.csproj" />
     <ProjectReference Include="..\GamedevNetwork.Domain\GamedevNetwork.Domain.csproj" />
     <ProjectReference Include="..\GamedevNetwork.Infra.Service\GamedevNetwork.Infra.Service.csproj" />
   </ItemGroup>

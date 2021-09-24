@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamedevNetwork.Infra.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamedevNetwork.Api", "GamedevNetwork.Api\GamedevNetwork.Api.csproj", "{54FE4AD6-A4C0-4054-92AC-BDA0B79C09B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamedevNetwork.Domain", "GamedevNetwork.Domain\GamedevNetwork.Domain.csproj", "{1E601011-9CEC-4F05-8570-4EC23D6E8028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamedevNetwork.Domain", "GamedevNetwork.Domain\GamedevNetwork.Domain.csproj", "{1E601011-9CEC-4F05-8570-4EC23D6E8028}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamedevNetwork.Data", "GamedevNetwork.Data\GamedevNetwork.Data.csproj", "{83F4F3D3-F962-4F51-9941-4346A1C8AF72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1E601011-9CEC-4F05-8570-4EC23D6E8028}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E601011-9CEC-4F05-8570-4EC23D6E8028}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E601011-9CEC-4F05-8570-4EC23D6E8028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F4F3D3-F962-4F51-9941-4346A1C8AF72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F4F3D3-F962-4F51-9941-4346A1C8AF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F4F3D3-F962-4F51-9941-4346A1C8AF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F4F3D3-F962-4F51-9941-4346A1C8AF72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

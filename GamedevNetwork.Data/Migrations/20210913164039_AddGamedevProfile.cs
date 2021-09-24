@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GamedevNetwork.Mvc.Data.Migrations
+namespace GamedevNetwork.Data.Migrations
 {
     public partial class AddGamedevProfile : Migration
     {
