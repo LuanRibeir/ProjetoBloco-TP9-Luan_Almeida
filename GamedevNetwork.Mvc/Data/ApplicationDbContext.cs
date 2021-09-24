@@ -13,8 +13,8 @@ namespace GamedevNetwork.Mvc.Data
             : base(options)
         {
         }
-        public DbSet<GamedevNetwork.Mvc.Models.GamedevProfile> GamedevProfile { get; set; }
-        public DbSet<GamedevNetwork.Mvc.Models.Post> Post { get; set; }
+        public DbSet<GamedevNetwork.Domain.Models.GamedevProfile> GamedevProfile { get; set; }
+        public DbSet<GamedevNetwork.Domain.Models.Post> Post { get; set; }
 
     }
 }

@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamedevNetwork.Mvc", "GamedevNetwork.Mvc\GamedevNetwork.Mvc.csproj", "{D5C5C811-0F8A-4F4B-8DC8-039E5E3E6AD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamedevNetwork.Mvc", "GamedevNetwork.Mvc\GamedevNetwork.Mvc.csproj", "{D5C5C811-0F8A-4F4B-8DC8-039E5E3E6AD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamedevNetwork.Infra.Service", "GamedevNetwork.Infra.Service\GamedevNetwork.Infra.Service.csproj", "{0791C946-DE2E-48C3-8114-5348007DCB76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamedevNetwork.Infra.Service", "GamedevNetwork.Infra.Service\GamedevNetwork.Infra.Service.csproj", "{0791C946-DE2E-48C3-8114-5348007DCB76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamedevNetwork.Api", "GamedevNetwork.Api\GamedevNetwork.Api.csproj", "{54FE4AD6-A4C0-4054-92AC-BDA0B79C09B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamedevNetwork.Api", "GamedevNetwork.Api\GamedevNetwork.Api.csproj", "{54FE4AD6-A4C0-4054-92AC-BDA0B79C09B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamedevNetwork.Domain", "GamedevNetwork.Domain\GamedevNetwork.Domain.csproj", "{1E601011-9CEC-4F05-8570-4EC23D6E8028}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{54FE4AD6-A4C0-4054-92AC-BDA0B79C09B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54FE4AD6-A4C0-4054-92AC-BDA0B79C09B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54FE4AD6-A4C0-4054-92AC-BDA0B79C09B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E601011-9CEC-4F05-8570-4EC23D6E8028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E601011-9CEC-4F05-8570-4EC23D6E8028}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E601011-9CEC-4F05-8570-4EC23D6E8028}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E601011-9CEC-4F05-8570-4EC23D6E8028}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

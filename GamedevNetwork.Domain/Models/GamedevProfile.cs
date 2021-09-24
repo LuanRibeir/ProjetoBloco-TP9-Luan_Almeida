@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GamedevNetwork.Mvc.Models
+namespace GamedevNetwork.Domain.Models
 {
     public class GamedevProfile
     {
