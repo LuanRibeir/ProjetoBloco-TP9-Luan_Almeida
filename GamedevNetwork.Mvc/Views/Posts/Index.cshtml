@@ -6,36 +6,43 @@
 
 <h1>Mural</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<p><a asp-action="Create">Criar Postagem</a></p>
+
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GamedevProfile.ImagemUri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GamedevProfile.Nome)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Texto)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DataCriacao)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GamedevProfile.Nome)
-            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Texto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataCriacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GamedevProfile.Nome)
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.GamedevProfile.ImagemUri)" width="35">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GamedevProfile.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Texto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCriacao)
+                </td>
+            </tr>
+
+        }
     </tbody>
 </table>
