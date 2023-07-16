@@ -233,10 +233,3 @@ Comentários são mensagens enviadas para outros usuários. É uma extensão dos
 <div align="center">
     <h1>TP9</h1>
 </div>
-<br>
-<br>
-
-## Relatório
-
-<p>O modelo em cascata não é algo novo, pelo contrário, já é concretizado um método seguro de desenvolvimento. Quando o professor nos explicou o conceito, achei que iria ser nada de mais, subestimei a sua complexidade, que com o tempo se transformou em um grande "quebra-cabeça", que quando as peças se encontraram começam a fazer sentido.
-Cada coisa tem seu lugar e em longo prazo a sua complexidade é recompensada por mais segurança e organização. <p/> Em pensar em construir uma rede social logo fiquei animado e cheio de ideias e expectativas, me superestimei, pensei em planos e mais planos, e logo cai com a cara no chão quando comecei as aulas. No final tentei criar um fundamento sólido, e com dificuldade consegui os seguintes resultados. Minha rede social simples, mas faz seu trabalho. Com a ajuda do identity rapidamente um meio de autenticação, e com certeza não aproveitei os recursos de customização. Depois segui a minha ideia inicial de formar um pequeno "fórum" com a tela de postagem, não é nada grandioso mas faz seu trabalho. Com a simples tela de perfil onde tive dificuldade em trafegar a imagem do usuário, é lá que seus dados pessoais são registrados. <p>Minhas expectativas fazem com que o produto final se pareça medíocre, e pode até ser, mas vejo ele como uma zona de estudo que não irei esquecer.
