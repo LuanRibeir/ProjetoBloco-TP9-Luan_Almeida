@@ -226,10 +226,3 @@ Comentários são mensagens enviadas para outros usuários. É uma extensão dos
 ## Diagrama de Componente
 
 ![](Img/ComponentDiagram.png)
-
-<br>
-<br>
-
-<div align="center">
-    <h1>TP9</h1>
-</div>
